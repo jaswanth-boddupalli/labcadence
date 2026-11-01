@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build outputs
+dist/
+build/
+
+# Local Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Lab data exports & dumps
+labpulse_export_*.json
+*.export.json
+*.dump
+*.csv
+
+# Runtime logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# User-uploaded files (directory structure preserved via .gitkeep)
+storage/*
+!storage/.gitkeep
+
+# System & Editor configs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
