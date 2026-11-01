@@ -38,7 +38,7 @@ export default function EmailAlertSettingsModal({
   const [secure, setSecure] = useState(false);
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
-  const [from, setFrom] = useState('"LabPulse Alert" <notifications@example.edu>');
+  const [from, setFrom] = useState('"LabCadence Alert" <notifications@example.edu>');
   const [piEmail, setPiEmail] = useState("pi@example.edu");
 
   const loadData = async () => {
@@ -61,7 +61,7 @@ export default function EmailAlertSettingsModal({
         setPort(configData.port || 587);
         setSecure(configData.secure || false);
         setUser(configData.user || "");
-        setFrom(configData.from || '"LabPulse Alert" <notifications@example.edu>');
+        setFrom(configData.from || '"LabCadence Alert" <notifications@example.edu>');
         setPiEmail(configData.piEmail || "pi@example.edu");
       }
     } catch (e: any) {
@@ -179,7 +179,7 @@ export default function EmailAlertSettingsModal({
                 </a>
               </li>
               <li>
-                App name: Enter <code className="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-bold">OMI LabPulse</code> and click <strong>Create</strong>.
+                App name: Enter <code className="bg-slate-100 px-1.5 py-0.5 rounded font-mono font-bold">LabCadence</code> and click <strong>Create</strong>.
               </li>
               <li>
                 Copy the generated <strong>16-letter code</strong> (e.g. <code className="bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded font-mono font-bold">abcd efgh ijkl mnop</code>).

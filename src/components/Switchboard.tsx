@@ -523,7 +523,7 @@ export default function Switchboard({
                         <input
                           type="email"
                           required
-                          placeholder="e.g. arthur.p@labpulse.edu"
+                          placeholder="e.g. arthur.p@labcadence.edu"
                           value={addEmail}
                           onChange={(e) => setAddEmail(e.target.value)}
                           className="w-full text-xs font-semibold p-2.5 bg-white border border-slate-200 rounded-xl focus:border-teal-700 focus:ring-1 focus:ring-teal-700 focus:outline-none"

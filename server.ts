@@ -13,7 +13,7 @@ dotenv.config();
 
 // PostgreSQL Configuration
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/labpulse",
+  connectionString: process.env.DATABASE_URL || "postgresql://postgres:postgres@localhost:5432/labcadence",
 });
 
 // Helper to get formatted RFC 5322 From address
@@ -130,14 +130,14 @@ Recipient: ${pi.name} (${recipientEmail})
 ${taskTitle ? `• Research Task: ${taskTitle} (${taskId || 'N/A'})\n` : ''}${details ? `• Details: ${details}\n` : ''}• Date & Time: ${dateString} IST
 • Dashboard Link: ${appUrl}
 
-This is an automated alert notification from OMI LabPulse.`;
+This is an automated alert notification from LabCadence.`;
 
   const htmlContent = `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
   <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 22px 28px; color: #ffffff;">
-    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: #38bdf8; text-transform: uppercase;">OMI LAB &bull; IISc Bangalore</div>
-    <h1 style="margin: 6px 0 0 0; font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">LabPulse Alert Notification</h1>
-    <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">Optics and Microfluidics Instrumentation Laboratory</p>
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: #38bdf8; text-transform: uppercase;">Research Operations &bull; Lifecycle Engine</div>
+    <h1 style="margin: 6px 0 0 0; font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">LabCadence Alert Notification</h1>
+    <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">Research Lifecycle and Task Coordination</p>
   </div>
   
   <div style="background: #ecfdf5; border-bottom: 2px solid #86efac; border-top: 1px solid #d1fae5; padding: 18px 28px;">
@@ -176,7 +176,7 @@ This is an automated alert notification from OMI LabPulse.`;
     </table>
 
     <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #f1f5f9; text-align: center;">
-      <a href="${appUrl}" style="display: inline-block; background-color: #0d9488; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 11px 26px; border-radius: 10px; box-shadow: 0 2px 4px rgba(13, 148, 136, 0.2);">Open Task in LabPulse</a>
+      <a href="${appUrl}" style="display: inline-block; background-color: #0d9488; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 11px 26px; border-radius: 10px; box-shadow: 0 2px 4px rgba(13, 148, 136, 0.2);">Open Task in LabCadence</a>
     </div>
   </div>
 
@@ -312,14 +312,14 @@ From: ${senderName} (Professor & PI)
 ${taskTitle ? `• Research Task: ${taskTitle} (${taskId || 'N/A'})\n` : ''}${details ? `• Details: ${details}\n` : ''}• Date & Time: ${dateString} IST
 • Dashboard Link: ${appUrl}
 
-This is an automated alert notification from OMI LabPulse.`;
+This is an automated alert notification from LabCadence.`;
 
   const htmlContent = `
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 620px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
   <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 22px 28px; color: #ffffff;">
-    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: #38bdf8; text-transform: uppercase;">OMI LAB &bull; IISc Bangalore</div>
-    <h1 style="margin: 6px 0 0 0; font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">LabPulse Alert Notification</h1>
-    <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">Optics and Microfluidics Instrumentation Laboratory</p>
+    <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; color: #38bdf8; text-transform: uppercase;">Research Operations &bull; Lifecycle Engine</div>
+    <h1 style="margin: 6px 0 0 0; font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">LabCadence Alert Notification</h1>
+    <p style="margin: 4px 0 0 0; font-size: 12px; color: #94a3b8;">Research Lifecycle and Task Coordination</p>
   </div>
   
   <div style="background: #f0fdf4; border-bottom: 2px solid #86efac; border-top: 1px solid #dcfce7; padding: 18px 28px;">
@@ -358,7 +358,7 @@ This is an automated alert notification from OMI LabPulse.`;
     </table>
 
     <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #f1f5f9; text-align: center;">
-      <a href="${appUrl}" style="display: inline-block; background-color: #0d9488; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 11px 26px; border-radius: 10px; box-shadow: 0 2px 4px rgba(13, 148, 136, 0.2);">Open Task in LabPulse</a>
+      <a href="${appUrl}" style="display: inline-block; background-color: #0d9488; color: #ffffff; text-decoration: none; font-weight: 700; font-size: 13px; padding: 11px 26px; border-radius: 10px; box-shadow: 0 2px 4px rgba(13, 148, 136, 0.2);">Open Task in LabCadence</a>
     </div>
   </div>
 
@@ -845,7 +845,7 @@ async function startServer() {
         secure: process.env.SMTP_SECURE === "true",
         user: process.env.SMTP_USER || "",
         hasPassword: !!process.env.SMTP_PASS,
-        from: process.env.SMTP_FROM || `"OMI LabPulse Alert" <${process.env.SMTP_USER || "notifications@example.com"}>`,
+        from: process.env.SMTP_FROM || `"LabCadence Alert" <${process.env.SMTP_USER || "notifications@example.com"}>`,
         piEmail: pi.email,
         piName: pi.name
       });

@@ -550,7 +550,7 @@ export default function ExecutiveIntelligence({
                 Laboratory Progress Summary Report
               </h2>
               <div className="flex justify-between font-mono text-[11px] mt-4 text-slate-500">
-                <span>INSTITUTION: LABPULSE RESEARCH OPERATIONS</span>
+                <span>INSTITUTION: LABCADENCE RESEARCH OPERATIONS</span>
                 <span>WINDOW: {startDateStr} TO {endDateStr}</span>
               </div>
             </div>

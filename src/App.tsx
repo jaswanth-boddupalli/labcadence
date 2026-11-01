@@ -34,45 +34,45 @@ export default function App() {
   const [tasks, setTasks] = useState<LabTask[]>(DEFAULT_TASKS);
 
   const [meetings, setMeetings] = useState<LabMeeting[]>(() => {
-    const saved = localStorage.getItem("labpulse_meetings");
+    const saved = localStorage.getItem("labcadence_meetings");
     return saved ? JSON.parse(saved) : DEFAULT_MEETINGS;
   });
 
   const [documents, setDocuments] = useState<LabDocument[]>(() => {
-    const saved = localStorage.getItem("labpulse_documents");
+    const saved = localStorage.getItem("labcadence_documents");
     return saved ? JSON.parse(saved) : DEFAULT_DOCUMENTS;
   });
 
   const [notifications, setNotifications] = useState<PeerNotification[]>(() => {
-    const saved = localStorage.getItem("labpulse_notifications");
+    const saved = localStorage.getItem("labcadence_notifications");
     return saved ? JSON.parse(saved) : [];
   });
 
   const [taskAlerts, setTaskAlerts] = useState<Record<string, TaskAlert>>(() => {
-    const saved = localStorage.getItem("labpulse_task_alerts");
+    const saved = localStorage.getItem("labcadence_task_alerts");
     return saved ? JSON.parse(saved) : {};
   });
 
   useEffect(() => {
-    localStorage.setItem("labpulse_task_alerts", JSON.stringify(taskAlerts));
+    localStorage.setItem("labcadence_task_alerts", JSON.stringify(taskAlerts));
   }, [taskAlerts]);
 
   // Active persona session - loads from sessionStorage or null on start so Profile Selection is first
   const [activeUserId, setActiveUserId] = useState<string | null>(() => {
-    return sessionStorage.getItem("labpulse_active_user") || null;
+    return sessionStorage.getItem("labcadence_active_user") || null;
   });
   const [activeTab, setActiveTab] = useState<string>("workspace"); // Default to personal workspace
 
   const handleLock = () => {
     setActiveUserId(null);
-    sessionStorage.removeItem("labpulse_active_user");
-    localStorage.removeItem("labpulse_auth");
+    sessionStorage.removeItem("labcadence_active_user");
+    localStorage.removeItem("labcadence_auth");
     showToast("Profile locked. Select your profile to enter.");
   };
 
   const handleSelectUser = (selectedUser: LabUser) => {
     setActiveUserId(selectedUser.userId);
-    sessionStorage.setItem("labpulse_active_user", selectedUser.userId);
+    sessionStorage.setItem("labcadence_active_user", selectedUser.userId);
     if (selectedUser.designation === "Professor (PI)") {
       setActiveTab("professor");
     } else if (selectedUser.designation === "Coordinator") {
@@ -129,15 +129,15 @@ export default function App() {
   // Synchronize localStorage with state hooks (meetings, documents, notifications — Phase 2)
 
   useEffect(() => {
-    localStorage.setItem("labpulse_meetings", JSON.stringify(meetings));
+    localStorage.setItem("labcadence_meetings", JSON.stringify(meetings));
   }, [meetings]);
 
   useEffect(() => {
-    localStorage.setItem("labpulse_documents", JSON.stringify(documents));
+    localStorage.setItem("labcadence_documents", JSON.stringify(documents));
   }, [documents]);
 
   useEffect(() => {
-    localStorage.setItem("labpulse_notifications", JSON.stringify(notifications));
+    localStorage.setItem("labcadence_notifications", JSON.stringify(notifications));
   }, [notifications]);
 
   // Shared Document Hub direct upload states
@@ -810,12 +810,12 @@ export default function App() {
       try {
         generatedUrl = URL.createObjectURL(directDocLocalFile);
       } catch (_) {
-        generatedUrl = `https://labpulse.drive/local-uploads/${encodeURIComponent(directDocLocalFile.name)}`;
+        generatedUrl = `https://labcadence.drive/local-uploads/${encodeURIComponent(directDocLocalFile.name)}`;
       }
     }
     
     if (!generatedUrl) {
-      generatedUrl = `https://labpulse.drive/assets/${directDocTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
+      generatedUrl = `https://labcadence.drive/assets/${directDocTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
     }
 
     handleUploadDoc(
@@ -1155,7 +1155,7 @@ export default function App() {
     
     const link = document.createElement("a");
     link.href = url;
-    link.download = `labpulse_export_${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `labcadence_export_${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

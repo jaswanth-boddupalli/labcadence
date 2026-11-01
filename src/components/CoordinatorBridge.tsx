@@ -120,12 +120,12 @@ export default function CoordinatorBridge({
         try {
           generatedUrl = URL.createObjectURL(directLocalFile);
         } catch (_) {
-          generatedUrl = `https://labpulse.drive/local-uploads/${encodeURIComponent(directLocalFile.name)}`;
+          generatedUrl = `https://labcadence.drive/local-uploads/${encodeURIComponent(directLocalFile.name)}`;
         }
       }
       
       if (!generatedUrl) {
-        generatedUrl = `https://labpulse.drive/assets/${directDocTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
+        generatedUrl = `https://labcadence.drive/assets/${directDocTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
       }
 
       onUploadDoc(
@@ -370,7 +370,7 @@ export default function CoordinatorBridge({
                     id="new-student-email"
                     type="email"
                     required
-                    placeholder="jennifer.l@labpulse.edu"
+                    placeholder="jennifer.l@labcadence.edu"
                     value={newSchEmail}
                     onChange={(e) => setNewSchEmail(e.target.value)}
                     className="w-full text-xs font-semibold p-2 bg-slate-50 border border-slate-200 rounded-xl"

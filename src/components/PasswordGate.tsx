@@ -28,8 +28,8 @@ export default function PasswordGate({ onUnlock }: PasswordGateProps) {
           <div className="p-3 bg-slate-50 border border-slate-200 rounded-full mb-4">
             <Lock className="w-6 h-6 text-slate-700" />
           </div>
-          <h1 className="text-xl font-semibold tracking-tight">OMI LAB | IISc</h1>
-          <p className="text-sm text-slate-500 mt-1">Research Operations Engine</p>
+          <h1 className="text-xl font-semibold tracking-tight">LabCadence</h1>
+          <p className="text-sm text-slate-500 mt-1">Research Lifecycle &amp; Operations Engine</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

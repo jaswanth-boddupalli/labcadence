@@ -1,4 +1,4 @@
-# LabPulse - Collaborative Research Management Platform
+# LabCadence - Collaborative Research Lifecycle & Operations Engine
 
 A high-performance research lifecycle management platform designed for academic laboratories, doctoral scholars, project coordinators, and Principal Investigators (PI).
 
@@ -38,7 +38,7 @@ When evaluating the application or launching locally:
 ### 2. Setup Database
 ```bash
 # Initialize PostgreSQL schema
-psql -U postgres -d labpulse -f init_db.sql
+psql -U postgres -d labcadence -f init_db.sql
 ```
 
 ### 3. Environment Variables

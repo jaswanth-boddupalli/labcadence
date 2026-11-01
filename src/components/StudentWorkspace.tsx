@@ -440,12 +440,12 @@ export default function StudentWorkspace({
       try {
         targetUrl = URL.createObjectURL(docLocalFile);
       } catch (_) {
-        targetUrl = `https://labpulse.drive/local-uploads/${encodeURIComponent(docLocalFile.name)}`;
+        targetUrl = `https://labcadence.drive/local-uploads/${encodeURIComponent(docLocalFile.name)}`;
       }
     }
 
     if (!targetUrl) {
-      targetUrl = `https://labpulse.drive/assets/${docTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
+      targetUrl = `https://labcadence.drive/assets/${docTitle.toLowerCase().replace(/\s+/g, "-")}.pdf`;
     }
 
     onUploadDoc(
@@ -1898,7 +1898,7 @@ export default function StudentWorkspace({
                   <input
                     type="text"
                     disabled={!!docLocalFile}
-                    placeholder={docLocalFile ? "Generated from PC file..." : "https://labpulse.drive/gel-protocol.pdf"}
+                    placeholder={docLocalFile ? "Generated from PC file..." : "https://labcadence.drive/gel-protocol.pdf"}
                     value={docLocalFile ? `local-file://${docLocalFile.name}` : docUrl}
                     onChange={(e) => setDocUrl(e.target.value)}
                     className="w-full text-xs font-semibold p-2 bg-slate-50 border border-slate-200 rounded-xl disabled:bg-slate-100 disabled:text-slate-400"

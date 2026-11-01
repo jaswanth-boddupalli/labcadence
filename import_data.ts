@@ -2,11 +2,11 @@ import fs from 'fs';
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/labpulse'
+  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/labcadence'
 });
 
 async function run() {
-  const exportFile = process.argv[2] || 'labpulse_export_2026-06-25.json';
+  const exportFile = process.argv[2] || 'labcadence_export.json';
   if (!fs.existsSync(exportFile)) {
     console.error(`Export file "${exportFile}" not found. Please provide a valid JSON export file path as an argument: npx tsx import_data.ts <path-to-export.json>`);
     process.exit(1);
